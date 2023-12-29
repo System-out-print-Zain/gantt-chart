@@ -1,34 +1,45 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import MonthHeader from './components/MonthHeader'
+import Tasks from './components/Tasks'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [tasks, setTasks] = useState([{ name: "Example Task", startDate: new Date(), endDate: new Date(), id: 0 }])
+  const [numTasksEver, setNumTasksEver] = useState(1);
+
+  function addTask(startDate, endDate, name) {
+    const newTaskArr = [...tasks];
+    newTaskArr.push({ name: name, startDate: startDate, endDate: endDate, id: numTasksEver });
+    setTasks(newTaskArr);
+    setNumTasksEver(numTasksEver + 1);
+  }
+
+  function deleteTask(id) {
+    const newTaskArr = [...tasks];
+    const taskToDelete = newTaskArr.indexOf(tasks.filter((task) => task.id === id)[0]);
+    newTaskArr.splice(taskToDelete, 1);
+    setTasks(newTaskArr);
+  }
+
+  function editTask(startDate, endDate, name, id) {
+    const newTaskArr = [...tasks];
+    const taskToChange = tasks.filter((task) => task.id === id)[0];
+    taskToChange.name = name;
+    taskToChange.startDate = startDate;
+    taskToChange.endDate = endDate;
+    setTasks(newTaskArr);
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div id="main">
+      <div id="task-manager">
+        <Tasks tasks={tasks} handleTaskAdd={addTask} handleTaskDelete={deleteTask} handleTaskEdit={editTask}></Tasks>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div id="chart">
+        <MonthHeader></MonthHeader>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div >
   )
 }
 
