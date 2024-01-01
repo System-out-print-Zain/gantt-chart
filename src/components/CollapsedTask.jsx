@@ -1,17 +1,15 @@
 import PropTypes from 'prop-types'
-function CollapsedTask({ task, handleTaskDelete, handleEdit }) {
+import { prodString } from '../utils/dateUtils';
+function CollapsedTask({ task, handleTaskDelete, handleEdit, index }) {
     const { name, startDate, endDate } = task;
-    const startDateStr = startDate.getFullYear() + "-" + startDate.getMonth() + "-" + startDate.getDate();
-    const endDateStr = endDate.getFullYear() + "-" + endDate.getMonth() + "-" + endDate.getDate();
+    const startDateStr = prodString(startDate);
+    const endDateStr = prodString(endDate);
     return (
         <div className="collapsed-task">
-            <button className="delete-btn" onClick={() => handleTaskDelete(task.id)}>Delete Task</button>
-            <h4 className="task-name">{name}</h4>
-            <div className="dates">
-                <h6 className="start-date">{startDateStr}</h6>
-                <h6 className="end-date">{endDateStr}</h6>
-            </div>
+            <h4 className="task-name"><span className="index">{index}</span> {name}</h4>
+            <h6 className="dates">{startDateStr} to {endDateStr}</h6>
             <button className="edit-btn" onClick={handleEdit}>Edit Task</button>
+            <button className="delete-btn" onClick={() => handleTaskDelete(task.id)}>Delete Task</button>
         </div>
     )
 }
@@ -19,7 +17,8 @@ function CollapsedTask({ task, handleTaskDelete, handleEdit }) {
 CollapsedTask.propTypes = {
     task: PropTypes.object,
     handleEdit: PropTypes.func,
-    handleTaskDelete: PropTypes.func
+    handleTaskDelete: PropTypes.func,
+    index: PropTypes.number
 }
 
 export default CollapsedTask;

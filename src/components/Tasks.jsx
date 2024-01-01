@@ -1,6 +1,7 @@
 import Task from './Task'
 import PropTypes from 'prop-types'
 import { useState } from 'react'
+import '../styles/Tasks.css'
 function Tasks({ tasks, handleTaskAdd, handleTaskDelete, handleTaskEdit }) {
     const [addingTask, setAddingTask] = useState(false);
 
@@ -8,9 +9,9 @@ function Tasks({ tasks, handleTaskAdd, handleTaskDelete, handleTaskEdit }) {
         setAddingTask(!addingTask);
     }
 
-    const emptyTask = { name: '', startDate: new Date(null), endDate: new Date(null) };
+    const emptyTask = { name: '', startDate: new Date(), endDate: new Date() };
     const lstTasks = tasks.map((task) =>
-        <Task key={task.id} task={task} handleTaskSubmit={handleTaskEdit} handleTaskDelete={handleTaskDelete} newTask={false} toggleAddingTask={toggleAdding}></Task>
+        <Task key={task.id} task={task} handleTaskSubmit={handleTaskEdit} handleTaskDelete={handleTaskDelete} newTask={false} toggleAddingTask={toggleAdding} index={tasks.indexOf(task) + 1}></Task>
     );
 
     return (

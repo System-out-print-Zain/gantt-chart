@@ -1,0 +1,19 @@
+.bar {
+    background-color: gold;
+}
+
+.row {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.bar-container {
+    flex-grow: 1;
+}
+
+.task-num {
+    width: 200px;
+    white-space: nowrap;
+    overflow: scroll;
+}

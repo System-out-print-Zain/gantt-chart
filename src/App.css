@@ -7,6 +7,19 @@
   justify-content: space-between;
 }
 
+#chart-area {
+  display: flex;
+  justify-content: left;
+  flex-grow: 1;
+  overflow: scroll;
+}
+
+#task-area {
+  display: flex;
+  justify-content: center;
+  flex-grow: 0.5;
+}
+
 #change-mode {
   font: inherit;
   margin-top: 15px;

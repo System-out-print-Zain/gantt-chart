@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import MonthHeader from './components/MonthHeader'
+import Chart from './components/Chart'
 import Tasks from './components/Tasks'
 import './App.css'
 
 function App() {
 
-  const [tasks, setTasks] = useState([{ name: "Example Task", startDate: new Date(), endDate: new Date(), id: 0 }])
+  const [tasks, setTasks] = useState([{ name: "Example Task", startDate: new Date('2023-10-25'), endDate: new Date('2023-11-30'), id: 0 }])
   const [numTasksEver, setNumTasksEver] = useState(1);
 
   function addTask(startDate, endDate, name) {
@@ -33,11 +33,11 @@ function App() {
 
   return (
     <div id="main">
-      <div id="task-manager">
+      <div id="task-area">
         <Tasks tasks={tasks} handleTaskAdd={addTask} handleTaskDelete={deleteTask} handleTaskEdit={editTask}></Tasks>
       </div>
-      <div id="chart">
-        <MonthHeader></MonthHeader>
+      <div id="chart-area">
+        <Chart tasks={tasks}></Chart>
       </div>
     </div >
   )

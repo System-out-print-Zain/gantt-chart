@@ -1,8 +1,6 @@
 .month-header {
     display: flex;
     border: 1px solid black;
-    margin-top: 15px;
-    margin-right: 10px;
     height: 3%;
 }
 
@@ -10,7 +8,12 @@ h4 {
     margin: 0px;
 }
 
-.month-header>div {
+.month-head {
     width: 60px;
+    border-right: 1px solid black;
+}
+
+.task-head {
+    width: 200px;
     border-right: 1px solid black;
 }
