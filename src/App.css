@@ -4,14 +4,25 @@
 
 #main {
   display: flex;
-  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
 }
 
 #chart-area {
   display: flex;
-  justify-content: left;
-  flex-grow: 1;
+  justify-content: center;
+  flex-grow: 2;
   overflow: scroll;
+  width: 1vw;
+}
+
+#chart-viewport {
+  overflow: scroll;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: left;
 }
 
 #task-area {

@@ -4,3 +4,7 @@
     flex-direction: column;
     gap: 50px;
 }
+
+.add-new {
+    width: 261px;
+}

@@ -2,6 +2,7 @@
   --main-fonts: Cochin, 'Times New Roman';
   font-family: var(--main-fonts);
   height: 100%;
+  width: 100%;
 }
 
 body {

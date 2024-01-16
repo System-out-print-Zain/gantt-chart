@@ -20,7 +20,7 @@ function ExpandedTask({ task, handleCancel, handleTaskSubmit, changeEditMode }) 
     return (
         <form className="expanded-task" onSubmit={submitTask}>
             <button className="cancel-btn" onClick={handleCancel}>X</button>
-            <div className="task-name">
+            <div className="task-name-entry">
                 <label htmlFor="task-name-field">Task Name: </label>
                 <input className="task-name-field" type="text" defaultValue={nameInput} onChange={(e) => setNameInput(e.target.value)} required />
             </div>

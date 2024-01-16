@@ -3,6 +3,7 @@ function MonthHeader() {
     return (
         <div className="month-header">
             <div className="task-head">Tasks</div>
+            <div className="duration-head">Duration</div>
             <div className="jan month-head"><h4>Jan</h4></div>
             <div className="feb month-head"><h4>Feb</h4></div>
             <div className="march month-head"><h4>Mar</h4></div>

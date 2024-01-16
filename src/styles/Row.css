@@ -6,14 +6,25 @@
     display: flex;
     padding-top: 10px;
     padding-bottom: 10px;
+    border: 1px dashed black;
+    border-top: 0px;
 }
 
 .bar-container {
     flex-grow: 1;
 }
 
-.task-num {
+.task-name-section {
     width: 200px;
     white-space: nowrap;
     overflow: scroll;
+}
+
+.duration {
+    width: 100px;
+    text-align: center;
+}
+
+.bar {
+    border-radius: 20px;
 }

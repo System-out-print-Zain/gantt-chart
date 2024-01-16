@@ -1,0 +1,12 @@
+.task-name {
+    white-space: normal;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.index {
+    color: blue;
+}

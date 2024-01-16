@@ -10,3 +10,7 @@ export function prodString(dateObj) {
 
     return year + '-' + month + '-' + day;
 }
+
+export function getDaysBetween(dateObj1, dateObj2) {
+    return Math.ceil(Math.abs((dateObj1.getTime() - dateObj2.getTime()))/(1000 * 3600 * 24));
+}

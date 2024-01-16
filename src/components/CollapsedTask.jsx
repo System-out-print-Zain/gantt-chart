@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import { prodString } from '../utils/dateUtils';
+import '../styles/CollapsedTask.css';
 function CollapsedTask({ task, handleTaskDelete, handleEdit, index }) {
     const { name, startDate, endDate } = task;
     const startDateStr = prodString(startDate);
@@ -8,8 +9,10 @@ function CollapsedTask({ task, handleTaskDelete, handleEdit, index }) {
         <div className="collapsed-task">
             <h4 className="task-name"><span className="index">{index}</span> {name}</h4>
             <h6 className="dates">{startDateStr} to {endDateStr}</h6>
-            <button className="edit-btn" onClick={handleEdit}>Edit Task</button>
-            <button className="delete-btn" onClick={() => handleTaskDelete(task.id)}>Delete Task</button>
+            <div className="btn-container">
+                <button className="edit-btn" onClick={handleEdit}>Edit Task</button>
+                <button className="delete-btn" onClick={() => handleTaskDelete(task.id)}>Delete Task</button>
+            </div>
         </div>
     )
 }

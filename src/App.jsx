@@ -37,7 +37,9 @@ function App() {
         <Tasks tasks={tasks} handleTaskAdd={addTask} handleTaskDelete={deleteTask} handleTaskEdit={editTask}></Tasks>
       </div>
       <div id="chart-area">
-        <Chart tasks={tasks}></Chart>
+        <div id="chart-viewport">
+          <Chart tasks={tasks}></Chart>
+        </div>
       </div>
     </div >
   )
